@@ -24,5 +24,10 @@ namespace WpfApp_26March2020
         {
             InitializeComponent();
         }
+
+        private void applyButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The Discription value is: {discriptionTextBox.Text}");
+        }
     }
 }
