@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_26March2020"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="800" Width="400">
 
     <Border Padding="10">
@@ -21,7 +22,7 @@
                 
             </Grid.ColumnDefinitions>
             <Button x:Name="applyButton" Click="applyButton_Click" Margin="0 0 10 0" Grid.Column="0" Content="Apply"/>
-            <Button x:Name="resetButton" Grid.Column="1" Content="Reset"/>
+            <Button x:Name="resetButton" Click="resetButton_Click" Grid.Column="1" Content="Reset"/>
             <Button x:Name="refreshButton" Margin="10 0 0 0" Grid.Column="2" Content="Refresh"/>
         </Grid>
         
@@ -78,35 +79,35 @@
 
                 <!-- Status -->
                 <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                    <CheckBox Content="Weld"/>
-                    <CheckBox Content="Assembly"/>
-                    <CheckBox Content="Plasma"/>
-                    <CheckBox Content="Laser"/>
-                    <CheckBox Content="Purchase"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="weldCheckBox" Content="Weld"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="assemblyCheckBox" Content="Assembly"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="plasmaCheckBox" Content="Plasma"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="laserCheckBox" Content="Laser"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="purchaseCheckBox" Content="Purchase"/>
                 </StackPanel>
 
                 <!-- Revision -->
                 <StackPanel Grid.Column="1" Margin="0 0 10 0">
-                    <CheckBox Content="Lathe"/>
-                    <CheckBox Content="Drill"/>
-                    <CheckBox Content="Fold"/>
-                    <CheckBox Content="Roll"/>
-                    <CheckBox Content="Saw"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="latheCheckBox" Content="Lathe"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="drillCheckBox" Content="Drill"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="foldCheckBox" Content="Fold"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="rollCheckBox" Content="Roll"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="sawCheckBox" Content="Saw"/>
                 </StackPanel>
 
             </Grid>
         
             <!-- Length -->
             <TextBlock Text ="Length" Margin="2"/>
-            <TextBox Padding= "2" />
+            <TextBox x:Name="lengthTextBox" Padding= "2" />
 
             <!-- Mass -->
             <TextBlock Text ="Mass" />
-            <TextBox IsReadOnly="True" Background="#eee" Padding= "2" />
+            <TextBox x:Name="massTextBox" IsReadOnly="True" Background="#eee" Padding= "2" />
 
             <!-- Finish -->
             <TextBlock Text ="Finish" />
-            <ComboBox SelectedIndex="0"  Padding= "2">
+            <ComboBox x:Name="finishDropDownBox" SelectionChanged="finishDropdown_SelectionChanged" SelectedIndex="0"  Padding= "2">
                 <ComboBoxItem>Painted</ComboBoxItem>
                 <ComboBoxItem>Not Painted</ComboBoxItem>
             </ComboBox>
@@ -119,15 +120,15 @@
             </ComboBox>
             <!-- Supplier Name -->
             <TextBlock Text ="Supplier Name" Margin="2"/>
-            <TextBox Padding= "2" />
+            <TextBox x:Name="supplierNameTextBox" Padding= "2" />
             <!-- Supplier Code -->
             <TextBlock Text ="Supplier Code" Margin="2"/>
-            <TextBox Padding= "2" />
+            <TextBox x:Name="supplierCodeTextBox" Padding= "2" />
 
             <!-- Additional Info -->
             <TextBlock Text ="Additional Info" FontWeight="Bold" Margin="0 10" />
             <TextBlock Text ="Note" />
-            <TextBox Padding= "2" />
+            <TextBox x:Name="noteTextBox" Padding= "2" />
 
 
 
